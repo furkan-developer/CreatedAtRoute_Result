@@ -1,6 +1,10 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddSingleton(new Dictionary<string, string>() {
+    { Guid.NewGuid().ToString(), ".NET"},
+    { Guid.NewGuid().ToString(), "ASP.NET Core"},
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
